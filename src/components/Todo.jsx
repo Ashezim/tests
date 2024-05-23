@@ -6,6 +6,7 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
       className="todo"
       style={{
         textDecoration: todo.isCompleted ? "line-through" : "",
+        backgroundColor: todo.isCompleted ? "rgba(0, 0, 0, 0.1 " : "",
       }}
     >
       <div className="content">
