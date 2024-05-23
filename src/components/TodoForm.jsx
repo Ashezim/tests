@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const TodoForm = ({ addTodo }) => {
@@ -33,6 +33,10 @@ const TodoForm = ({ addTodo }) => {
       </form>
     </div>
   );
+};
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func.isRequired,
 };
 
 export default TodoForm;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Search = ({ search, setSearch }) => {
   return (
     <div className="search">
@@ -10,6 +12,11 @@ const Search = ({ search, setSearch }) => {
       />
     </div>
   );
+};
+
+Search.propTypes = {
+  search: PropTypes.string.isRequired,
+  setSearch: PropTypes.func.isRequired,
 };
 
 export default Search;

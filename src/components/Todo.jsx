@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React from "react";
+import PropTypes from "prop-types";
 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
@@ -23,6 +22,12 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
       </div>
     </div>
   );
+};
+
+Todo.propTypes = {
+  todo: PropTypes.array.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+  completeTodo: PropTypes.func.isRequired,
 };
 
 export default Todo;
