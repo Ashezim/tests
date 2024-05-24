@@ -26,7 +26,8 @@ const ToDoList = () => {
     },
   ]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("All");
+  const [statusFilter, setStatusFilter] = useState("Todas");
+  const [categoryFilter, setCategoryFilter] = useState("Todas");
   const [sort, setSort] = useState("ASC");
 
   const removeToDo = (id) => {
@@ -64,12 +65,19 @@ const ToDoList = () => {
   return (
     <div>
       <Search search={search} setSearch={setSearch} />
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      <Filter
+        statusFilter={statusFilter}
+        setStatusFilter={setStatusFilter}
+        categoryFilter={categoryFilter}
+        setCategoryFilter={setCategoryFilter}
+        setSort={setSort}
+      />
       <ToDo
         toDos={toDos}
         sort={sort}
         search={search}
-        filter={filter}
+        statusFilter={statusFilter}
+        categoryFilter={categoryFilter}
         removeToDo={removeToDo}
         completeToDo={completeToDo}
       />

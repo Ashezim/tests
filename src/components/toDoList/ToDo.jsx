@@ -1,13 +1,30 @@
 import PropTypes from "prop-types";
 
-const ToDo = ({ toDos, sort, search, filter, removeToDo, completeToDo }) => {
+const ToDo = ({
+  toDos,
+  sort,
+  search,
+  statusFilter,
+  categoryFilter,
+  removeToDo,
+  completeToDo,
+}) => {
   const mappedToDos = toDos
     .filter((toDo) =>
-      filter === "Todas"
+      statusFilter === "Todas"
         ? true
-        : filter === "Completas"
+        : statusFilter === "Completas"
         ? toDo.isCompleted
         : !toDo.isCompleted
+    )
+    .filter((toDo) =>
+      categoryFilter === "Todas"
+        ? true
+        : categoryFilter === "Profissional"
+        ? toDo.category.toLowerCase().includes(categoryFilter.toLowerCase())
+        : categoryFilter === "Pessoal"
+        ? toDo.category.toLowerCase().includes(categoryFilter.toLowerCase())
+        : toDo.category.toLowerCase().includes(categoryFilter.toLowerCase())
     )
     .filter(
       (toDo) =>
@@ -62,7 +79,8 @@ ToDo.propTypes = {
   toDos: PropTypes.array.isRequired,
   sort: PropTypes.string.isRequired,
   search: PropTypes.string.isRequired,
-  filter: PropTypes.string.isRequired,
+  statusFilter: PropTypes.string.isRequired,
+  categoryFilter: PropTypes.string.isRequired,
   removeToDo: PropTypes.func.isRequired,
   completeToDo: PropTypes.func.isRequired,
 };
