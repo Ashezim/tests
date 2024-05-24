@@ -168,13 +168,17 @@ button:hover {
   opacity: 1;
 }
 
-.todo-list {
+.toDo-list {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #555;
 }
 
-.todo {
+.toDo-list h3 {
+  text-align: center;
+}
+
+.toDo {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -193,7 +197,7 @@ button:hover {
   background-color: #d9534f;
 }
 
-.todo-form {
+.toDo-form {
   padding-bottom: 1.5rem;
 }
 

@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 
 const Filter = ({ filter, setFilter, setSort }) => {
+  const status = ["Todas", "Completas", "Incompletas"];
+
   return (
     <div className="filter">
       <h2>Filtrar:</h2>
       <div className="filter-options">
-        {" "}
         <div>
           <p>Status:</p>
           <select
@@ -13,15 +14,17 @@ const Filter = ({ filter, setFilter, setSort }) => {
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
-            <option value="All">Todas</option>
-            <option value="Completed">Completas</option>
-            <option value="Incomplete">Incompletas</option>
+            {status.map((status) => (
+              <option key={status} value={status}>
+                {status}
+              </option>
+            ))}
           </select>
         </div>
         <div>
           <p>Ordem alfabética:</p>
-          <button onClick={() => setSort("Asc")}>Asc</button>
-          <button onClick={() => setSort("Desc")}>Desc</button>
+          <button onClick={() => setSort("ASC")}>Ascendente</button>
+          <button onClick={() => setSort("DESC")}>Descendente</button>
         </div>
         <p></p>
       </div>

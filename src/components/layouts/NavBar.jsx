@@ -2,13 +2,12 @@ import { useState } from "react";
 
 const NavBar = () => {
   const [menuStyles, setMenuStyles] = useState("mobile-menu");
-  const [menuItens] = useState([
+  const menuItens = [
     {
       text: "Lista de Tarefas",
       path: "#",
     },
-    { text: "Teste", path: "#" },
-  ]);
+  ];
 
   const handleMenu = () => {
     menuStyles === "mobile-menu"

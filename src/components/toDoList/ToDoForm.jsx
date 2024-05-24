@@ -1,20 +1,21 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const TodoForm = ({ addTodo }) => {
+const ToDoform = ({ addToDo }) => {
   const [value, setValue] = useState("");
-  const [category, setCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const categories = ["Profissional", "Pessoal", "Acadêmico"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value || !category) return;
-    addTodo(value, category);
+    if (!value || !selectedCategory) return;
+    addToDo(value, selectedCategory);
     setValue("");
-    setCategory("");
+    setSelectedCategory("");
   };
 
   return (
-    <div className="todo-form">
+    <div className="toDo-form">
       <h2>Criar tarefa:</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -26,13 +27,15 @@ const TodoForm = ({ addTodo }) => {
         />
         <select
           id="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
         >
           <option value="">Selecione uma categoria</option>
-          <option value="Trabalho">Trabalho</option>
-          <option value="Pessoal">Pessoal</option>
-          <option value="Estudos">Estudos</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
         <button type="submit">Criar tarefa</button>
       </form>
@@ -40,8 +43,8 @@ const TodoForm = ({ addTodo }) => {
   );
 };
 
-TodoForm.propTypes = {
-  addTodo: PropTypes.func.isRequired,
+ToDoform.propTypes = {
+  addToDo: PropTypes.func.isRequired,
 };
 
-export default TodoForm;
+export default ToDoform;
