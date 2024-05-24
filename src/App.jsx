@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import "./App.css";
 
-import Todo from "./components/Todo";
-import TodoForm from "./components/TodoForm";
-import Search from "./components/Search";
-import Filter from "./components/Filter";
+import Todo from "./components/toDoList/Todo";
+import TodoForm from "./components/toDoList/TodoForm";
+import Search from "./components/toDoList/Search";
+import Filter from "./components/toDoList/Filter";
 import NavBar from "./components/layouts/NavBar";
 
 function App() {

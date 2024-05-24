@@ -26,7 +26,7 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
 };
 
 Todo.propTypes = {
-  todo: PropTypes.array.isRequired,
+  todo: PropTypes.object.isRequired,
   removeTodo: PropTypes.func.isRequired,
   completeTodo: PropTypes.func.isRequired,
 };

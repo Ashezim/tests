@@ -130,7 +130,7 @@ html {
 
 .app {
   max-width: 600px;
-  margin: 0 auto 300px;
+  margin: auto;
   background-color: #efefef;
   padding: 20px 30px;
   border-radius: 10px;
