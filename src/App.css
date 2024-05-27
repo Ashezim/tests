@@ -114,7 +114,7 @@ html {
   align-self: end;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   html {
     font-size: 12px;
   }
@@ -129,6 +129,16 @@ html {
 
   .filter-options {
     flex-direction: column;
+    gap: 0 !important;
+  }
+
+  .toDo {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .filter {
+    padding-bottom: 0 !important;
   }
 }
 
