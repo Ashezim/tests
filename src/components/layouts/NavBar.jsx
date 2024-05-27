@@ -1,11 +1,13 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-const NavBar = () => {
+const NavBar = ({ setPage }) => {
   const [menuStyles, setMenuStyles] = useState("mobile-menu");
   const menuItens = [
     {
       text: "Lista de Tarefas",
-      path: "#",
+      path: "ToDoList",
+      // path: "#",
     },
   ];
 
@@ -19,12 +21,12 @@ const NavBar = () => {
     <div>
       <nav className="navbar">
         <div className="logo">
-          <a href="#">Ashezim</a>
+          <button onClick={() => setPage("Home")}>Ashezim</button>
         </div>
         <ul className="nav-links-desktop">
           {menuItens.map((itens) => (
             <li key={itens.text}>
-              <a href={itens.path}>{itens.text}</a>
+              <button onClick={() => setPage(itens.path)}>{itens.text}</button>
             </li>
           ))}
         </ul>
@@ -35,7 +37,9 @@ const NavBar = () => {
           <ul className="nav-links-mobile">
             {menuItens.map((itens) => (
               <li key={itens.text}>
-                <a href={itens.path}>{itens.text}</a>
+                <button onClick={() => setPage(itens.path)}>
+                  {itens.text}
+                </button>
               </li>
             ))}
           </ul>
@@ -46,6 +50,10 @@ const NavBar = () => {
       </nav>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  setPage: PropTypes.func.isRequired,
 };
 
 export default NavBar;

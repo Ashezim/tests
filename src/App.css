@@ -25,6 +25,12 @@ html {
   background-color: #333;
 }
 
+.navbar button {
+  background-color: unset;
+  font-size: 18px;
+  margin: 0 !important;
+}
+
 .logo a {
   font-size: 24px;
   color: #fff;
