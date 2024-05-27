@@ -126,6 +126,10 @@ html {
   .hamburger {
     display: block;
   }
+
+  .filter-options {
+    flex-direction: column;
+  }
 }
 
 .app {
